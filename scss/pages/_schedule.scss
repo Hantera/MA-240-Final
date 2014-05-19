@@ -1,0 +1,27 @@
+/* 
+==========================
+Schedule Page 
+========================== 
+*/
+
+// Media Queries Styling and layout
+
+.sessions{
+		@include col(2,4);
+	}
+
+	.sessionstwo{
+		@include col(2,4);
+	}
+
+	.sessionsthree{
+		@include col(2,4);
+	}
+
+.sessionsfour{
+		@include col(2,4);
+	}
+
+	.description{
+		clear:both;
+	}

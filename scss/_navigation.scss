@@ -1,0 +1,82 @@
+/* ============================
+* NAVIGATION 
+* Modified from: http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/a-simple-responsive-mobile-first-navigation/
+* =============================*/  
+  
+#main_nav, #bottomNav{
+  clear:both;
+  overflow:hidden;
+  background-color: #f92;
+  
+
+    ul{
+      list-style: none;
+    }
+
+    li{
+      float:left;
+    }
+
+    li a{
+      display:block;
+      color:#fff;
+      background-color: #f92;
+      text-transform: uppercase;
+      padding: 0.625em 1em; /* 10/16   16/16*/
+      text-decoration:none;
+      font-weight:900;
+    }
+
+    li a:hover{
+      color:#555;
+      background-color: #fff;
+    }
+      
+    li a:active{
+      color:#555;
+      background-color: #f90;
+    }  
+
+
+    label{
+      color:#fff;
+      float:left;
+    }
+}
+/* ==========================
+*  Media Queries for Main Nav
+*  ========================== */
+
+/* 590/ 16 */
+/* everything up to 590 */
+@media only screen and (max-width:36.875em) {
+  #main_nav form{
+    display: block;
+  }
+  #main_nav ul{
+    display: none;
+  }
+}
+
+/* 591 / 16 */
+  /* everything over 590 */
+@media only screen and (min-width:36.9375em) {
+  #main_nav form{
+    display: none;
+  }
+  #main_nav ul{
+    display: block;
+  }
+  
+  #main_nav select{
+      display:none;
+  }
+  
+  /* easiest way to keep features from bumping into the nav */
+  .feature{
+    margin-top:1em;
+  }
+    
+} /* end min-width:30.0625em */
+
+

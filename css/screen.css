@@ -1,0 +1,678 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,900);
+                                                                                                                                               /* 
+This is the main stylesheet file. To keep things easier to read we don't actually write any css here. Instead we import a bunch of other partial files.
+In Sass a partial has the following properties:
+
+- it starts with an underscore _
+- it is not automatically processed, you have to @import it
+- if it ends with .scss then you can write normal css or write sass or a combination
+
+Also, FYI, this is an example of a comment that won't get erased or compressed when Sass creates the CSS file. Putting the ! after the opening /* tells Sass not to touch it.
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, ../scss/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, ../scss/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../scss/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../scss/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../scss/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 41, ../scss/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../scss/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements */
+/* line 5, ../scss/_global.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* This is not the only thing you should do for responsive images, but it is a start. Remember that this style will not make your image or video grow any bigger than the original so you have to put in the largest version you will need.
+That can be a performance issue since small screens will download the same image as large ones.
+This article by Luke Wroblewski goes into more detail about that: http://www.lukew.com/ff/entry.asp?1851
+*/
+/* line 13, ../scss/_global.scss */
+img, video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 23, ../scss/_global.scss */
+body {
+  margin: 0;
+  padding: 0 2%;
+  background: #dae2cf url(images/background.jpg) repeat-x left top;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10pt;
+  color: #3B3B3B;
+}
+
+/* line 32, ../scss/_global.scss */
+h1, h2, h3, h4 {
+  margin: 0px;
+  padding: 5px;
+  letter-spacing: 1.5px;
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+  color: #F6B300;
+}
+
+/* line 41, ../scss/_global.scss */
+h1 {
+  font-size: 2em;
+}
+
+/* line 45, ../scss/_global.scss */
+h2 {
+  font-family: verdana;
+  letter-spacing: 1px;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+/* line 52, ../scss/_global.scss */
+h3 {
+  font-family: verdana;
+  font-size: 1.7em;
+  margin-bottom: 10px;
+}
+
+/* line 59, ../scss/_global.scss */
+h4 {
+  font-family: verdana;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  line-height: 180%;
+  font-size: 18px;
+}
+
+/* line 73, ../scss/_global.scss */
+p, ul, ol {
+  font-family: verdana;
+  margin-top: 0;
+  line-height: 180%;
+}
+
+/* line 90, ../scss/_global.scss */
+a {
+  text-decoration: none;
+  color: #4C5C37;
+}
+
+/* line 101, ../scss/_global.scss */
+header h1 {
+  font-size: 2em;
+  font-family: 'Playfair Display', Georgia,serif;
+  padding: 2%;
+  text-align: center;
+}
+@media only screen and (min-width: 20.0625em) {
+  /* line 109, ../scss/_global.scss */
+  header h1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 30.0625em) {
+  /* line 117, ../scss/_global.scss */
+  header h1 {
+    font-size: 5em;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 124, ../scss/_global.scss */
+  header h1 {
+    font-weight: 700;
+    font-size: 4em;
+  }
+}
+@media only screen and (min-width: 67.5em) {
+  /* line 132, ../scss/_global.scss */
+  header h1 {
+    font-size: 5em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  /* line 139, ../scss/_global.scss */
+  header h1 {
+    font-weight: 900;
+    font-size: 6em;
+  }
+}
+
+/* line 153, ../scss/_global.scss */
+footer {
+  color: #eee;
+  background-color: #555;
+  padding: 10px;
+  clear: both;
+  border-top: #eee 10px solid;
+}
+
+/* ============================
+* NAVIGATION 
+* Modified from: http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/a-simple-responsive-mobile-first-navigation/
+* =============================*/
+/* line 6, ../scss/_navigation.scss */
+#main_nav, #bottomNav {
+  clear: both;
+  overflow: hidden;
+  background-color: #f92;
+}
+/* line 12, ../scss/_navigation.scss */
+#main_nav ul, #bottomNav ul {
+  list-style: none;
+}
+/* line 16, ../scss/_navigation.scss */
+#main_nav li, #bottomNav li {
+  float: left;
+}
+/* line 20, ../scss/_navigation.scss */
+#main_nav li a, #bottomNav li a {
+  display: block;
+  color: #fff;
+  background-color: #f92;
+  text-transform: uppercase;
+  padding: 0.625em 1em;
+  /* 10/16   16/16*/
+  text-decoration: none;
+  font-weight: 900;
+}
+/* line 30, ../scss/_navigation.scss */
+#main_nav li a:hover, #bottomNav li a:hover {
+  color: #555;
+  background-color: #fff;
+}
+/* line 35, ../scss/_navigation.scss */
+#main_nav li a:active, #bottomNav li a:active {
+  color: #555;
+  background-color: #f90;
+}
+/* line 41, ../scss/_navigation.scss */
+#main_nav label, #bottomNav label {
+  color: #fff;
+  float: left;
+}
+
+/* ==========================
+*  Media Queries for Main Nav
+*  ========================== */
+/* 590/ 16 */
+/* everything up to 590 */
+@media only screen and (max-width: 36.875em) {
+  /* line 53, ../scss/_navigation.scss */
+  #main_nav form {
+    display: block;
+  }
+
+  /* line 56, ../scss/_navigation.scss */
+  #main_nav ul {
+    display: none;
+  }
+}
+/* 591 / 16 */
+/* everything over 590 */
+@media only screen and (min-width: 36.9375em) {
+  /* line 64, ../scss/_navigation.scss */
+  #main_nav form {
+    display: none;
+  }
+
+  /* line 67, ../scss/_navigation.scss */
+  #main_nav ul {
+    display: block;
+  }
+
+  /* line 71, ../scss/_navigation.scss */
+  #main_nav select {
+    display: none;
+  }
+
+  /* easiest way to keep features from bumping into the nav */
+  /* line 76, ../scss/_navigation.scss */
+  .feature {
+    margin-top: 1em;
+  }
+}
+/* end min-width:30.0625em */
+/* line 2, ../scss/_midterm.scss */
+body {
+  background-color: #6699FF;
+}
+
+/* line 6, ../scss/_midterm.scss */
+.serif {
+  font-family: "Times New Roman",Times,serif;
+}
+
+/* line 8, ../scss/_midterm.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* This is not the only thing you should do for responsive images, but it is a start. Remember that this style will not make your image or video grow any bigger than the original so you have to put in the largest version you will need.
+That can be a performance issue since small screens will download the same image as large ones.
+This article by Luke Wroblewski goes into more detail about that: http://www.lukew.com/ff/entry.asp?1851
+*/
+/* line 18, ../scss/_midterm.scss */
+img, video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 24, ../scss/_midterm.scss */
+body {
+  font: 16px/1.4em "PT Sans", sans-serif;
+  color: #1c1c1c;
+}
+
+/* line 30, ../scss/_midterm.scss */
+p,
+ul {
+  margin: 0 0 1.5em;
+}
+
+/* line 34, ../scss/_midterm.scss */
+ul {
+  list-style: disc;
+  padding: 0 0 0 20px;
+}
+
+/* line 39, ../scss/_midterm.scss */
+a {
+  color: #1D745A;
+}
+
+/* line 43, ../scss/_midterm.scss */
+h1 {
+  font: 300 21px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'PT Serif', serif;
+  width: 20%;
+  margin: 0 auto 15px;
+}
+
+/* line 51, ../scss/_midterm.scss */
+h2 {
+  font-family: 'PT Serif', serif;
+  font-size: 32px;
+  line-height: 1.4em;
+  margin: 0 0 .4em;
+  font-weight: bold;
+}
+
+/*layout*/
+/* line 62, ../scss/_midterm.scss */
+article {
+  border-bottom: 1px solid #d8d8d8;
+  padding: 10px 20px 0 20px;
+  margin: 10px 0;
+}
+
+/*header*/
+/* line 70, ../scss/_midterm.scss */
+header {
+  background: #1c1c1c;
+  padding: 15px 50px;
+}
+
+/*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
+/* line 77, ../scss/_midterm.scss */
+header:before,
+header:after {
+  content: "";
+  display: table;
+}
+
+/* line 82, ../scss/_midterm.scss */
+header:after {
+  clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+/* line 87, ../scss/_midterm.scss */
+header {
+  zoom: 1;
+}
+
+/* line 91, ../scss/_midterm.scss */
+.logo a {
+  color: #d8d8d8;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 22px;
+  float: left;
+  letter-spacing: 0.2em;
+}
+
+/* line 104, ../scss/_midterm.scss */
+.intro {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+  -moz-box-shadow: 0px 0px 3px #000000;
+  -webkit-box-shadow: 0px 0px 3px #000000;
+  box-shadow: 0px 0px 3px #000000;
+  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+}
+
+/* line 120, ../scss/_midterm.scss */
+.about, .date, .location, .feature, .workshop, .fine, .performing, .media, .map, .session, .sessiontwo, .sessionthree, .sessionfour, .billwright, .loiselainegriffith, .sheilasolomonklass, .jodyculkin, .robertzweig, .lisamellinger
+, .alizabethtowery, .malcolmlinton, .sarahhaviland, .susanapowell, .elspethbrown, .dianedowling, .peterpallis, .christopherstein, .sandraposter, .revitalkaisar, .sessions, .sessionstwo, .sessionsthree, .sessionsfour, .lunch
+, .bus, .car, .path, .subway, .conference, .closing, .videoWrapper {
+  border-bottom: 1px solid #000000;
+}
+
+/* line 125, ../scss/_midterm.scss */
+.lunch, .closing, .map {
+  clear: both;
+}
+
+/* 
+==========================
+Index Page (homepage)
+========================== 
+*/
+/* line 10, ../scss/pages/_index.scss */
+.date {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.date:last-of-type {
+  float: right;
+}
+
+/* line 14, ../scss/pages/_index.scss */
+.location {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.location:last-of-type {
+  float: right;
+}
+
+/* line 18, ../scss/pages/_index.scss */
+.description {
+  clear: both;
+}
+
+/* line 22, ../scss/pages/_index.scss */
+.tracks {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 30.0625em) {
+  /* line 29, ../scss/pages/_index.scss */
+  .introduction {
+    width: 75%;
+    padding: 0 1%;
+    float: left;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .introduction:last-of-type {
+    float: right;
+  }
+  /* line 32, ../scss/pages/_index.scss */
+  .introduction p {
+    font-size: 2em;
+    line-height: 1.4em;
+  }
+
+  /* line 38, ../scss/pages/_index.scss */
+  .track {
+    width: 25%;
+    padding: 0 1%;
+    float: left;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .track:last-of-type {
+    float: right;
+  }
+
+  /* line 42, ../scss/pages/_index.scss */
+  .speaker {
+    width: 50%;
+    padding: 0 1%;
+    float: left;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .speaker:last-of-type {
+    float: right;
+  }
+
+  /* line 46, ../scss/pages/_index.scss */
+  .featuredspeakers {
+    clear: both;
+    margin: 0 0;
+    overflow: hidden;
+  }
+
+  /* line 50, ../scss/pages/_index.scss */
+  .track {
+    width: 50%;
+    padding: 0 1%;
+    float: left;
+    border-bottom: none;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .track:last-of-type {
+    float: right;
+  }
+
+  /* line 55, ../scss/pages/_index.scss */
+  .tracks {
+    border-bottom: 1px solid #000;
+  }
+
+  /* line 58, ../scss/pages/_index.scss */
+  .performing {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 65, ../scss/pages/_index.scss */
+  .speaker {
+    width: 25%;
+    padding: 0 1%;
+    float: left;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .speaker:last-of-type {
+    float: right;
+  }
+}
+/* 
+==========================
+Schedule Page 
+========================== 
+*/
+/* line 9, ../scss/pages/_schedule.scss */
+.sessions {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.sessions:last-of-type {
+  float: right;
+}
+
+/* line 13, ../scss/pages/_schedule.scss */
+.sessionstwo {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.sessionstwo:last-of-type {
+  float: right;
+}
+
+/* line 17, ../scss/pages/_schedule.scss */
+.sessionsthree {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.sessionsthree:last-of-type {
+  float: right;
+}
+
+/* line 21, ../scss/pages/_schedule.scss */
+.sessionsfour {
+  width: 50%;
+  padding: 0 1%;
+  float: left;
+}
+/* line 17, ../scss/_mixins.scss */
+.sessionsfour:last-of-type {
+  float: right;
+}
+
+/* line 25, ../scss/pages/_schedule.scss */
+.description {
+  clear: both;
+}
+
+/* 
+==========================
+Speakers Page 
+========================== 
+*/
+/* 
+==========================
+About Page 
+========================== 
+*/
+/* line 7, ../scss/pages/_about.scss */
+.mapWrapper {
+  position: relative;
+  padding-bottom: 66.6666667%;
+    /* 
+	do math with the height of your iframe divided by the width, then converted to percent
+	in this example the height is 400 and the width is 600
+    400 / 600 = .66666667 
+    which is 66.6666667% */
+  height: 0;
+}
+
+/* line 17, ../scss/pages/_about.scss */
+.mapWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+==========================
+Videos Page 
+========================== 
+*/
+/* line 6, ../scss/pages/_video.scss */
+.videopage {
+  /* =====================================
+     CSS for <iframe> embedded element
+     ===================================== */
+}
+/* line 12, ../scss/pages/_video.scss */
+.videopage .videoWrapper {
+  position: relative;
+  padding-bottom: 75%;
+  /* 16:9 */
+  /* if your video is 4:3 ratio then use the padding-bottom below:*/
+  /*padding-bottom: 75%;*/
+  /* 4:3 */
+  height: 0;
+}
+/* line 21, ../scss/pages/_video.scss */
+.videopage .videoWrapper iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 45em) {
+  /* line 33, ../scss/pages/_video.scss */
+  .video {
+    width: 50%;
+    padding: 0 1%;
+    float: left;
+  }
+  /* line 17, ../scss/_mixins.scss */
+  .video:last-of-type {
+    float: right;
+  }
+}
+/* 
+==========================
+Sessions Page 
+========================== 
+*/

@@ -1,0 +1,84 @@
+/* 
+==========================
+Index Page (homepage)
+========================== 
+*/
+
+
+
+// Media Queries Styling and layout
+.date{
+		@include col(2,4);
+	}
+
+	.location{
+		@include col(2,4);
+	}
+
+	.description{
+		clear:both;
+	}
+
+.tracks{
+	overflow:hidden;
+}
+
+
+@include breakpoint(small){
+	//
+	.introduction{
+		@include col(3,4);
+		
+		p{
+			font-size: 2em;
+			line-height: 1.4em;
+		}
+	}//end introduction
+
+	.track{
+		@include col(1,4);
+	}
+
+	.speaker{
+		@include col(2,4);
+	}
+
+	.featuredspeakers{
+		@include set-row;
+	}
+
+	.track{
+		@include col(2,4);
+		border-bottom:none;
+	}
+
+	.tracks{
+		border-bottom:1px solid #000;
+	}
+	.performing{
+		clear:both;
+	}
+
+}//end small
+
+@include breakpoint(medium){
+.speaker{
+	@include col(1,4);
+}
+	
+}//end medium
+
+@include breakpoint(large){
+	
+
+}//end large
+
+@include breakpoint(x-large){
+
+}//
+
+
+
+
+
+
